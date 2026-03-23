@@ -14,4 +14,9 @@ jobs:
 
     -name: Setup Node
     uses: actions/setup-node@v4
+
+    -name: Install dependencies
+    uses: npm Install
+
+
       
