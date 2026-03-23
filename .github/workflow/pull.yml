@@ -1,0 +1,17 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    # the build will run on ubuntu's latest version
+    runs-on: ubuntu-latest
+  steps:
+    -name: Checkout Node
+    uses: actions/checkout@v4
+
+    -name: Setup Node
+    uses: actions/setup-node@v4
+      
