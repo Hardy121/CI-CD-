@@ -8,15 +8,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     
-  steps:
-    - name: Checkout Node
-    uses: actions/checkout@v4
+    steps:
+      name: Checkout Node
+      uses: actions/checkout@v4
     
-    - name: Setup Node
-    uses: actions/setup-node@v4
+      name: Setup Node
+      uses: actions/setup-node@v4
 
-    - name: Install dependencies
-    uses: npm Install
+      name: Install dependencies
+      uses: npm Install
 
 
-      
+    
