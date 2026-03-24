@@ -1,4 +1,5 @@
-import { configDotenv } from "dotenv";
+import dotenv from "dotenv";
+dotenv.config()
 import express from "express";
 import userRouter from "./src/routers/user.router.js"
 const PORT = process.env.PORT || 3001
