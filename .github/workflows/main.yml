@@ -22,6 +22,12 @@ jobs:
 
       - name: Run app
         run:  node app.js
+
+      - name: run lint
+        run: npm run lint  
+
+      - name: run test
+        run: npm run test    
  
 
 
