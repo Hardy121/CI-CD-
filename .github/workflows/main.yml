@@ -37,6 +37,12 @@ jobs:
 
       - name: run container
         run: docker run -d -p 3001:3001 my-app
-      
-      - name: checkout container
-        run: curl http://localhost:3001
+
+      - name: Login to docker hub
+        run: echo "${{secret.DOCKER_PASSWORD}}" | docker login -u "${{secret.DOCKER_USERNAME}}" --password-stdin
+
+      - name: Tag docker image 
+        run: docker tag my-app ${{secret.DOCKER_USERNAME}}/node-app:latest
+
+      - name: Push docker image
+        run: docker push ${{secret.DOCKER_USERNAME}}/node-app:latest
