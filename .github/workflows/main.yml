@@ -4,14 +4,14 @@ on:
   push:
     branches: [main]
   pull_request:
-  
+
 jobs:
-  build:
+  ci:
     runs-on: ubuntu-latest
 
     strategy:
       matrix: 
-        node-version: [18, 20]
+        node-version: [20]
     
     steps:
       - name: Checkout Node
@@ -34,3 +34,9 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t my-app .
+
+      - name: run container
+        run: docker run -d -p 3001:3001 my-app
+      
+      - name: checkout container
+        run: curl http://localhost:3001
